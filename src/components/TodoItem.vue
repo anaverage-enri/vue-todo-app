@@ -4,6 +4,7 @@
     <p>
         <input type="checkbox" @change="markComplete">
         {{todo.title}}
+        <button @click="$emit('del-todo', todo.id)" class="del">x</button>
     </p>
   </div>
 </template>
@@ -34,6 +35,7 @@ export default {
     .del {
         background: #ff0000;
         color: #fff;
+        border-radius: 50%;
         border: none;
         padding: 5px 9px;
         cursor: pointer;
